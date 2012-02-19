@@ -14,6 +14,27 @@
 		4FB1860214F0E1B100119E74 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1860014F0E1B100119E74 /* MainMenu.xib */; };
 		4FB1860514F0E1B100119E74 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1860414F0E1B100119E74 /* rb_main.rb */; };
 		4FB1860714F0E1B100119E74 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1860614F0E1B100119E74 /* AppDelegate.rb */; };
+		4FB1862014F0E25700119E74 /* toolbar-savesearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861514F0E25600119E74 /* toolbar-savesearch.png */; };
+		4FB1862114F0E25700119E74 /* toolbar-unsavesearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861614F0E25600119E74 /* toolbar-unsavesearch.png */; };
+		4FB1862214F0E25700119E74 /* down.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861714F0E25600119E74 /* down.tiff */; };
+		4FB1862314F0E25700119E74 /* downB.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861814F0E25600119E74 /* downB.tiff */; };
+		4FB1862414F0E25700119E74 /* FilterMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861914F0E25600119E74 /* FilterMusic.png */; };
+		4FB1862514F0E25700119E74 /* FilterNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861A14F0E25600119E74 /* FilterNone.png */; };
+		4FB1862614F0E25700119E74 /* FilterStarred.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861B14F0E25600119E74 /* FilterStarred.png */; };
+		4FB1862714F0E25700119E74 /* FilterUnread.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861C14F0E25600119E74 /* FilterUnread.png */; };
+		4FB1862814F0E25700119E74 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861D14F0E25600119E74 /* Play.png */; };
+		4FB1862914F0E25700119E74 /* Slice 1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861E14F0E25600119E74 /* Slice 1.tiff */; };
+		4FB1862A14F0E25700119E74 /* canvas.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1861F14F0E25600119E74 /* canvas.png */; };
+		4FB1862F14F0E2D000119E74 /* NSBezierPath_erweiterung.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1862C14F0E2D000119E74 /* NSBezierPath_erweiterung.rb */; };
+		4FB1863014F0E2D000119E74 /* ANKnobAnimation.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1862D14F0E2D000119E74 /* ANKnobAnimation.rb */; };
+		4FB1863114F0E2D000119E74 /* erweiterungen.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1862E14F0E2D000119E74 /* erweiterungen.rb */; };
+		4FB1863414F0E2E600119E74 /* Item.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863314F0E2E600119E74 /* Item.rb */; };
+		4FB1863814F0E30100119E74 /* MASWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863614F0E30100119E74 /* MASWindowController.rb */; };
+		4FB1863914F0E30100119E74 /* ANSegmentedControl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */; };
+		4FB1863F14F0E31700119E74 /* MASWindow.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863B14F0E31700119E74 /* MASWindow.rb */; };
+		4FB1864014F0E31700119E74 /* inTitlebarView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863C14F0E31700119E74 /* inTitlebarView.rb */; };
+		4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */; };
+		4FB1864214F0E31700119E74 /* ItemCellView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863E14F0E31700119E74 /* ItemCellView.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,13 +51,34 @@
 		4FB185EB14F0E1B100119E74 /* ApplicationsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB185EF14F0E1B100119E74 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4FB185F114F0E1B100119E74 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
-		4FB185F814F0E1B100119E74 /* ApplicationsViewer-Info.plist */ = {isa = PBXFileReference; path = "ApplicationsViewer-Info.plist"; sourceTree = "<group>"; };
+		4FB185F814F0E1B100119E74 /* ApplicationsViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ApplicationsViewer-Info.plist"; sourceTree = "<group>"; };
 		4FB185FA14F0E1B100119E74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FB185FC14F0E1B100119E74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4FB185FE14F0E1B100119E74 /* ApplicationsViewer-Prefix.pch */ = {isa = PBXFileReference; path = "ApplicationsViewer-Prefix.pch"; sourceTree = "<group>"; };
+		4FB185FE14F0E1B100119E74 /* ApplicationsViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApplicationsViewer-Prefix.pch"; sourceTree = "<group>"; };
 		4FB1860114F0E1B100119E74 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4FB1860414F0E1B100119E74 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
-		4FB1860614F0E1B100119E74 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		4FB1860614F0E1B100119E74 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; name = AppDelegate.rb; path = ApplicationsViewer/AppDelegate.rb; sourceTree = SOURCE_ROOT; };
+		4FB1861514F0E25600119E74 /* toolbar-savesearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-savesearch.png"; sourceTree = "<group>"; };
+		4FB1861614F0E25600119E74 /* toolbar-unsavesearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-unsavesearch.png"; sourceTree = "<group>"; };
+		4FB1861714F0E25600119E74 /* down.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = down.tiff; sourceTree = "<group>"; };
+		4FB1861814F0E25600119E74 /* downB.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = downB.tiff; sourceTree = "<group>"; };
+		4FB1861914F0E25600119E74 /* FilterMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterMusic.png; sourceTree = "<group>"; };
+		4FB1861A14F0E25600119E74 /* FilterNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterNone.png; sourceTree = "<group>"; };
+		4FB1861B14F0E25600119E74 /* FilterStarred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterStarred.png; sourceTree = "<group>"; };
+		4FB1861C14F0E25600119E74 /* FilterUnread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterUnread.png; sourceTree = "<group>"; };
+		4FB1861D14F0E25600119E74 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		4FB1861E14F0E25600119E74 /* Slice 1.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Slice 1.tiff"; sourceTree = "<group>"; };
+		4FB1861F14F0E25600119E74 /* canvas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = canvas.png; sourceTree = "<group>"; };
+		4FB1862C14F0E2D000119E74 /* NSBezierPath_erweiterung.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = NSBezierPath_erweiterung.rb; sourceTree = "<group>"; };
+		4FB1862D14F0E2D000119E74 /* ANKnobAnimation.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ANKnobAnimation.rb; sourceTree = "<group>"; };
+		4FB1862E14F0E2D000119E74 /* erweiterungen.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = erweiterungen.rb; sourceTree = "<group>"; };
+		4FB1863314F0E2E600119E74 /* Item.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Item.rb; sourceTree = "<group>"; };
+		4FB1863614F0E30100119E74 /* MASWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MASWindowController.rb; sourceTree = "<group>"; };
+		4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ANSegmentedControl.rb; sourceTree = "<group>"; };
+		4FB1863B14F0E31700119E74 /* MASWindow.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MASWindow.rb; sourceTree = "<group>"; };
+		4FB1863C14F0E31700119E74 /* inTitlebarView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = inTitlebarView.rb; sourceTree = "<group>"; };
+		4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = LBSegmentedButton.rb; sourceTree = "<group>"; };
+		4FB1863E14F0E31700119E74 /* ItemCellView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ItemCellView.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +123,11 @@
 		4FB185F614F0E1B100119E74 /* ApplicationsViewer */ = {
 			isa = PBXGroup;
 			children = (
+				4FB6842B14F0ECEF000990C0 /* models */,
+				4FB6842C14F0ED01000990C0 /* views */,
+				4FB6842D14F0ED19000990C0 /* controllers */,
 				4FB1860614F0E1B100119E74 /* AppDelegate.rb */,
+				4FB1862B14F0E2B500119E74 /* helpers */,
 				4FB185FF14F0E1B100119E74 /* Resources */,
 				4FB1860314F0E1B100119E74 /* Other Sources */,
 				4FB185F714F0E1B100119E74 /* Supporting Files */,
@@ -103,6 +149,7 @@
 		4FB185FF14F0E1B100119E74 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4FB6842A14F0ECE1000990C0 /* images */,
 				4FB1860014F0E1B100119E74 /* MainMenu.xib */,
 			);
 			name = Resources;
@@ -114,6 +161,62 @@
 				4FB1860414F0E1B100119E74 /* rb_main.rb */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		4FB1862B14F0E2B500119E74 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4FB1862C14F0E2D000119E74 /* NSBezierPath_erweiterung.rb */,
+				4FB1862D14F0E2D000119E74 /* ANKnobAnimation.rb */,
+				4FB1862E14F0E2D000119E74 /* erweiterungen.rb */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		4FB6842A14F0ECE1000990C0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4FB1861514F0E25600119E74 /* toolbar-savesearch.png */,
+				4FB1861614F0E25600119E74 /* toolbar-unsavesearch.png */,
+				4FB1861714F0E25600119E74 /* down.tiff */,
+				4FB1861814F0E25600119E74 /* downB.tiff */,
+				4FB1861914F0E25600119E74 /* FilterMusic.png */,
+				4FB1861A14F0E25600119E74 /* FilterNone.png */,
+				4FB1861B14F0E25600119E74 /* FilterStarred.png */,
+				4FB1861C14F0E25600119E74 /* FilterUnread.png */,
+				4FB1861D14F0E25600119E74 /* Play.png */,
+				4FB1861E14F0E25600119E74 /* Slice 1.tiff */,
+				4FB1861F14F0E25600119E74 /* canvas.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		4FB6842B14F0ECEF000990C0 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4FB1863314F0E2E600119E74 /* Item.rb */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		4FB6842C14F0ED01000990C0 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */,
+				4FB1863B14F0E31700119E74 /* MASWindow.rb */,
+				4FB1863C14F0E31700119E74 /* inTitlebarView.rb */,
+				4FB1863E14F0E31700119E74 /* ItemCellView.rb */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		4FB6842D14F0ED19000990C0 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FB1863614F0E30100119E74 /* MASWindowController.rb */,
+				4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +292,27 @@
 				4FB1860214F0E1B100119E74 /* MainMenu.xib in Resources */,
 				4FB1860514F0E1B100119E74 /* rb_main.rb in Resources */,
 				4FB1860714F0E1B100119E74 /* AppDelegate.rb in Resources */,
+				4FB1862014F0E25700119E74 /* toolbar-savesearch.png in Resources */,
+				4FB1862114F0E25700119E74 /* toolbar-unsavesearch.png in Resources */,
+				4FB1862214F0E25700119E74 /* down.tiff in Resources */,
+				4FB1862314F0E25700119E74 /* downB.tiff in Resources */,
+				4FB1862414F0E25700119E74 /* FilterMusic.png in Resources */,
+				4FB1862514F0E25700119E74 /* FilterNone.png in Resources */,
+				4FB1862614F0E25700119E74 /* FilterStarred.png in Resources */,
+				4FB1862714F0E25700119E74 /* FilterUnread.png in Resources */,
+				4FB1862814F0E25700119E74 /* Play.png in Resources */,
+				4FB1862914F0E25700119E74 /* Slice 1.tiff in Resources */,
+				4FB1862A14F0E25700119E74 /* canvas.png in Resources */,
+				4FB1862F14F0E2D000119E74 /* NSBezierPath_erweiterung.rb in Resources */,
+				4FB1863014F0E2D000119E74 /* ANKnobAnimation.rb in Resources */,
+				4FB1863114F0E2D000119E74 /* erweiterungen.rb in Resources */,
+				4FB1863414F0E2E600119E74 /* Item.rb in Resources */,
+				4FB1863814F0E30100119E74 /* MASWindowController.rb in Resources */,
+				4FB1863914F0E30100119E74 /* ANSegmentedControl.rb in Resources */,
+				4FB1863F14F0E31700119E74 /* MASWindow.rb in Resources */,
+				4FB1864014F0E31700119E74 /* inTitlebarView.rb in Resources */,
+				4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */,
+				4FB1864214F0E31700119E74 /* ItemCellView.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +467,7 @@
 				4FB1860C14F0E1B100119E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FB1860D14F0E1B100119E74 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
 			isa = XCConfigurationList;
@@ -351,6 +476,7 @@
 				4FB1860F14F0E1B100119E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
