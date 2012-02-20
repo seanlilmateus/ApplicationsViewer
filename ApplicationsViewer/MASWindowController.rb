@@ -7,13 +7,13 @@
 #
 class MASWindowController < NSWindowController
   def initWithWindowNibName nib_window
-		super("SampleWindow")
-		self.window.title_bar_height = 46.0
-		self.showWindow nil
-		self
+    super("SampleWindow")
+    self.window.title_bar_height = 46.0
+    self.showWindow nil
+    self
   end
 	
-	def windowDidLoad 
-		super
-	end
+  def windowDidLoad 
+    super
+  end
 end
