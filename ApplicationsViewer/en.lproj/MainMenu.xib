@@ -2052,14 +2052,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">newDocument:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="705341025"/>
-					</object>
-					<int key="connectionID">373</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">openDocument:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="722745758"/>
@@ -2521,6 +2513,14 @@
 						<reference key="destination" ref="285141372"/>
 					</object>
 					<int key="connectionID">602</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">show_window:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="705341025"/>
+					</object>
+					<int key="connectionID">1130</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5167,7 +5167,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1129</int>
+			<int key="maxID">1130</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5199,6 +5199,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="items_size_clicked:">id</string>
 						<string key="show_popover:">id</string>
+						<string key="show_window:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="items_size_clicked:">
@@ -5207,6 +5208,10 @@
 						</object>
 						<object class="IBActionInfo" key="show_popover:">
 							<string key="name">show_popover:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="show_window:">
+							<string key="name">show_window:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

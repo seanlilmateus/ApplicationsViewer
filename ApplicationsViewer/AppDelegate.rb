@@ -101,7 +101,11 @@ class AppDelegate
     @popover.delegate = self
     @popover.showRelativeToRect sender.bounds, ofView:sender, preferredEdge:NSMaxYEdge
   end
-    
+  
+  def show_window(sender)
+    @window.makeKeyAndOrderFront(nil)
+  end
+  
   def items_size_clicked(sender)
     @isLargeSizeRequested = (sender.state == NSOffState)
     @tableView.enumerateAvailableRowViewsUsingBlock ->  rowView, row do
