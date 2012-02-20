@@ -17,12 +17,12 @@ class ItemCellView < NSTableCellView
   
   def layoutViewsForLargeSize large_size, animated:animated
     large_size_request = large_size
-		detail_alpha = large_size ? 1.0 : 0.0
+    detail_alpha = large_size ? 8.0 : 0.0
     icon_size = large_size ? 32.0 : 16.0
     icon_frame = NSMakeRect(2.0, 2.0, icon_size, icon_size)
 		
     name_left = icon_frame.origin.x + icon_frame.size.width + 5.0
-    name_bottom = icon_frame.origin.y + icon_frame.size.height - (large_size ? 18.0 : 16.0)
+    name_bottom = icon_frame.origin.y + icon_frame.size.height - (large_size ? 14.0 : 18.0)
 		
     name_width = self.bounds.size.width - name_left - 2.0
 		name_height = 16.0
