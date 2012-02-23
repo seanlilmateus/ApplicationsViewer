@@ -61,12 +61,12 @@ class INTitlebarView < NSView
 	def clippingPathWithRect aRect, cornerRadius:radius
 		path = NSBezierPath.bezierPath
 		rect = NSInsetRect(aRect, radius, radius)
-		cornerPoint = NSMakePoint(NSMinX(aRect), NSMinY(aRect))
+		corner_point = NSMakePoint(NSMinX(aRect), NSMinY(aRect))
 		# Create a rounded rectangle path, omitting the bottom left/right corners
-		path.appendBezierPathWithPoints cornerPoint, count:1
+		path.appendBezierPathWithPoints corner_point, count:1
 
-		cornerPoint = NSMakePoint(NSMaxX(aRect), NSMinY(aRect))
-		path.appendBezierPathWithPoints cornerPoint, count:1
+		corner_point = NSMakePoint(NSMaxX(aRect), NSMinY(aRect))
+		path.appendBezierPathWithPoints corner_point, count:1
 
 		path.appendBezierPathWithArcWithCenter NSMakePoint(NSMaxX(rect), NSMaxY(rect)), 
 										radius:radius,
@@ -83,10 +83,10 @@ class INTitlebarView < NSView
 
 	def mouseUp theEvent
 		if (theEvent.clickCount == 2)
-			userDefaults = NSUserDefaults.standardUserDefaults
-			userDefaults.addSuiteNamed NSGlobalDomain
-			shouldMiniaturize = userDefaults.objectForKey(MDAppleMiniaturizeOnDoubleClickKey)
-			self.window.miniaturize(self) if (shouldMiniaturize)
+			user_defaults = NSUserDefaults.standardUserDefaults
+			user_defaults.addSuiteNamed NSGlobalDomain
+			should_miniaturize = user_defaults.objectForKey(MDAppleMiniaturizeOnDoubleClickKey)
+			self.window.miniaturize(self) if (should_miniaturize)
 		end
 	end
 end

@@ -6,16 +6,16 @@
 #  Copyright 2011 Sean Coorp. INC. All rights reserved.
 #
 module RoundedRectPartType
-  def self.middlePart;0;end
-	def self.topPart; 1; end
-	def self.bottomPart;2;end
+    def self.middle_part;0;end
+	def self.top_part; 1; end
+	def self.bottom_part;2;end
 end
 
 class LBSegmentedButton < NSView
-  attr_accessor :target, :previouslySelectedSegment
-  DEFAULT_cellHeight = 35
-  DEFAULT_borderColor = NSColor.colorWithCalibratedRed 200.0/255.0, green:200.0/255.0, blue:200.0/255.0, alpha:1.0
-  DEFAULT_radius = 5
+  attr_accessor :target, :prev_selected_segment
+  DEFAULT_CELL_HEIGHT = 35
+  DEFAULT_BORDER_COLOR = NSColor.colorWithCalibratedRed 200.0/255.0, green:200.0/255.0, blue:200.0/255.0, alpha:1.0
+  DEFAULT_RADIUS = 5
 		
   SHADOWCOLOR    = NSColor.colorWithCalibratedRed 251.0/255.0,green:251.0/255.0,blue:251.0/255.0, alpha:1.0
   LIGHTTEXTCOLOR = NSColor.colorWithCalibratedRed 186.0/255.0,green:168.0/255.0,blue:168.0/255.0, alpha:1.0
@@ -24,9 +24,9 @@ class LBSegmentedButton < NSView
   GRADIENTCOLOR1 = NSColor.colorWithCalibratedRed 230.0/255.0,green:230.0/255.0,blue:230.0/255.0, alpha:1.0
   GRADIENTCOLOR2 = NSColor.colorWithCalibratedRed 247.0/255.0,green:247.0/255.0,blue:247.0/255.0, alpha:1.0
 		
-  def setSelectedSegment value
-    unless value == @selectedSegment
-      @selectedSegment = value 
+  def selected_segment=(value)
+    unless value == @selected_segment
+      @selected_segment = value 
       self.setNeedsDisplay true
     end
   end
@@ -40,9 +40,9 @@ class LBSegmentedButton < NSView
     @titles = values
     # @target = value
     # set default drawing info
-    @borderColor = DEFAULT_borderColor
-    @cellHeight = DEFAULT_cellHeight
-    @radius = DEFAULT_radius
+    @border_color = DEFAULT_BORDER_COLOR
+    @cell_height = DEFAULT_CELL_HEIGHT
+    @radius = DEFAULT_RADIUS
     self
   end
 		
@@ -50,17 +50,17 @@ class LBSegmentedButton < NSView
     super frameRect
     @titles = ["CHECK","FIVE","FOUR","THREE","TWO","ONE"]
     @target = nil
-    @selectedSegment = -1
-    @previouslySelectedSegment = -1
+    @selected_segment = -1
+    @prev_selected_segment = -1
     # set default drawing info
-    @borderColor = DEFAULT_borderColor
-    @cellHeight = DEFAULT_cellHeight
-    @radius = DEFAULT_radius
+    @border_color = DEFAULT_BORDER_COLOR
+    @cell_height = DEFAULT_CELL_HEIGHT
+    @radius = DEFAULT_RADIUS
 		  
-    # if (NSHeight(frameRect) != self.numberOfCells * (@cellHeight + 2)+1)
-    #   NSLog("The height doesn't match to the cellHeight. The proper height would be #{self.numberOfCells * (@cellHeight + 2)}")
+    # if (NSHeight(frameRect) != self.numberOfCells * (@cell_height + 2)+1)
+    #   NSLog("The height doesn't match to the cell_height. The proper height would be #{self.numberOfCells * (@cell_height + 2)}")
     # end
-    new_frame = NSMakeRect(0,0, NSWidth(self.bounds), (@titles.size * @cellHeight)+12)
+    new_frame = NSMakeRect(0,0, NSWidth(self.bounds), (@titles.size * @cell_height)+12)
     self.frame = new_frame
     self
   end
@@ -72,7 +72,7 @@ class LBSegmentedButton < NSView
   def drawTitles
     @titles.each_with_index do |title, idx|
       label = NSTextField.alloc.initWithFrame NSMakeRect(0, 0, NSWidth(self.bounds), 17)
-      centerDistance = (@cellHeight - 17)/2
+      center_distance = (@cell_height - 17)/2
       borders = (idx+1)*2
       label.bordered = false
       label.drawsBackground = false
@@ -82,7 +82,7 @@ class LBSegmentedButton < NSView
       label.textColor = DARKTEXTCOLOR
 		    
       label.setStringValue title
-      label.frameOrigin = NSMakePoint(0, borders + centerDistance + idx * @cellHeight)
+      label.frameOrigin = NSMakePoint(0, borders + center_distance + idx * @cell_height)
       self.addSubview label
     end
   end
@@ -94,28 +94,28 @@ class LBSegmentedButton < NSView
     minX = NSMinX(rect)
     minY = NSMinY(rect)
     
-    if (type == RoundedRectPartType.bottomPart)
+    if (type == RoundedRectPartType.bottom_part)
       # Bottom shadow
-      bottomShadow = CGPathCreateMutable()
+      bottom_shadow = CGPathCreateMutable()
       
-      CGPathMoveToPoint(bottomShadow, nil, minX, minY+@radius)
+      CGPathMoveToPoint(bottom_shadow, nil, minX, minY+@radius)
       
       # 90degrees curve (left bottom)
-      CGPathAddQuadCurveToPoint(bottomShadow, nil, minX, minY, minX+@radius , minY)
-      CGPathAddLineToPoint(bottomShadow, nil, maxX - @radius, minY)
+      CGPathAddQuadCurveToPoint(bottom_shadow, nil, minX, minY, minX+@radius , minY)
+      CGPathAddLineToPoint(bottom_shadow, nil, maxX - @radius, minY)
       
       # 90degrees curve (right bottom)
-      CGPathAddQuadCurveToPoint(bottomShadow, nil, maxX, minY, maxX, @radius)
+      CGPathAddQuadCurveToPoint(bottom_shadow, nil, maxX, minY, maxX, @radius)
       
       SHADOWCOLOR.setStroke
-      CGContextAddPath(context, bottomShadow)
+      CGContextAddPath(context, bottom_shadow)
       CGContextDrawPath(context, KCGPathStroke)
 						
       # Box
       minY+=1
       box = CGPathCreateMutable();
 						
-      CGPathMoveToPoint(box, nil, minX, @cellHeight+3)
+      CGPathMoveToPoint(box, nil, minX, @cell_height+3)
       CGPathAddLineToPoint(box, nil, minX, minY+@radius)
       
       # 90degrees curve (left bottom)
@@ -124,13 +124,13 @@ class LBSegmentedButton < NSView
       
       # 90degrees curve (right bottom)
       CGPathAddQuadCurveToPoint(box, nil, maxX, minY, maxX, minY+@radius) 
-      CGPathAddLineToPoint(box, nil, maxX, @cellHeight+3)
+      CGPathAddLineToPoint(box, nil, maxX, @cell_height+3)
         
       CGContextAddPath(context, box)
       
-      @borderColor.setStroke
+      @border_color.setStroke
         
-      if (@selectedSegment == idx)
+      if (@selected_segment == idx)
         HIGHLIGHTCOLOR.setFill
         CGContextDrawPath(context, KCGPathFillStroke)
       else 
@@ -138,22 +138,22 @@ class LBSegmentedButton < NSView
       end
       
       CGPathRelease(box)
-      CGPathRelease(bottomShadow);
+      CGPathRelease(bottom_shadow);
       
-    elsif (type == RoundedRectPartType.middlePart)
+    elsif (type == RoundedRectPartType.middle_part)
       # Box
       box = CGPathCreateMutable()
       
-      CGPathMoveToPoint(box, nil, minX, minY+ 3 + @cellHeight)
+      CGPathMoveToPoint(box, nil, minX, minY+ 3 + @cell_height)
       CGPathAddLineToPoint(box, nil, minX, minY+1)
       CGPathAddLineToPoint(box, nil, maxX, minY+1)
-      CGPathAddLineToPoint(box, nil, maxX, minY+@cellHeight+3)
+      CGPathAddLineToPoint(box, nil, maxX, minY+@cell_height+3)
       
       CGContextAddPath(context, box)
       
-      @borderColor.setStroke
+      @border_color.setStroke
       
-      if (@selectedSegment == idx)
+      if (@selected_segment == idx)
         HIGHLIGHTCOLOR.setFill
         CGContextDrawPath(context, KCGPathFillStroke)
       else
@@ -166,7 +166,7 @@ class LBSegmentedButton < NSView
       CGPathMoveToPoint(shadow, nil, minX+1, minY)
       CGPathAddLineToPoint(shadow, nil, maxX-1, minY)
       
-      (@selectedSegment+1==idx) ? 	HIGHLIGHTCOLOR.setStroke : SHADOWCOLOR.setStroke
+      (@selected_segment+1==idx) ? 	HIGHLIGHTCOLOR.setStroke : SHADOWCOLOR.setStroke
       CGContextAddPath(context, shadow)
       CGContextDrawPath(context, KCGPathStroke)
       
@@ -179,19 +179,19 @@ class LBSegmentedButton < NSView
       CGPathMoveToPoint(box, nil, minX, minY + 1)
       CGPathAddLineToPoint(box, nil, maxX, minY + 1)
 						
-      CGPathAddLineToPoint(box, nil, maxX, minY + @cellHeight - @radius + 2)
-      CGPathAddQuadCurveToPoint(box, nil, maxX, minY+@cellHeight+2, maxX-@radius, minY + @cellHeight+2)
+      CGPathAddLineToPoint(box, nil, maxX, minY + @cell_height - @radius + 2)
+      CGPathAddQuadCurveToPoint(box, nil, maxX, minY+@cell_height+2, maxX-@radius, minY + @cell_height+2)
 						
-      CGPathAddLineToPoint(box, nil, minX+@radius, minY+@cellHeight+2)
-      CGPathAddQuadCurveToPoint(box, nil, minX, minY + @cellHeight+2, minX, minY+@cellHeight-@radius+2)
+      CGPathAddLineToPoint(box, nil, minX+@radius, minY+@cell_height+2)
+      CGPathAddQuadCurveToPoint(box, nil, minX, minY + @cell_height+2, minX, minY+@cell_height-@radius+2)
 						
       CGPathAddLineToPoint(box, nil, minX, minY+1)
       CGPathCloseSubpath(box)
       
       CGContextAddPath(context, box)
       
-      @borderColor.setStroke
-      if (@selectedSegment == idx)
+      @border_color.setStroke
+      if (@selected_segment == idx)
         HIGHLIGHTCOLOR.setFill
         CGContextDrawPath(context, KCGPathFillStroke)
       else
@@ -204,7 +204,7 @@ class LBSegmentedButton < NSView
       CGPathMoveToPoint(shadow, nil, minX + 1, minY)
       CGPathAddLineToPoint(shadow, nil, maxX - 1, minY)
       
-      (@selectedSegment + 1 == idx) ? HIGHLIGHTCOLOR.setStroke : SHADOWCOLOR.setStroke 
+      (@selected_segment + 1 == idx) ? HIGHLIGHTCOLOR.setStroke : SHADOWCOLOR.setStroke 
       
       CGContextAddPath(context, shadow)
       CGContextDrawPath(context, KCGPathStroke)
@@ -215,9 +215,9 @@ class LBSegmentedButton < NSView
   end
 		
   def drawBackground
-    clipPath = NSBezierPath.bezierPathWithRoundedRect self.bounds, xRadius:@radius, yRadius:@radius
+    clip_path = NSBezierPath.bezierPathWithRoundedRect self.bounds, xRadius:@radius, yRadius:@radius
     gradient = NSGradient.alloc.initWithStartingColor GRADIENTCOLOR1, endingColor:GRADIENTCOLOR2
-    gradient.drawInBezierPath clipPath, angle:90.0
+    gradient.drawInBezierPath clip_path, angle:90.0
   end
 		
   def drawRect dirtyRect
@@ -225,17 +225,11 @@ class LBSegmentedButton < NSView
     (self.numberOfCells).times do |idx|
       # If it is the bottom
       if (idx == 0)
-        self.drawCell RoundedRectPartType.bottomPart, 
-																 rect:NSInsetRect(NSMakeRect(0, 0, NSWidth(self.bounds), @cellHeight+2), 0.5, 0.5), 
-																index:idx
+        self.drawCell RoundedRectPartType.bottom_part, rect:NSInsetRect(NSMakeRect(0, 0, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
       elsif (idx == self.numberOfCells)
-        self.drawCell RoundedRectPartType.topPart, 
-																 rect:NSInsetRect(NSMakeRect(0, (@cellHeight+2) * idx, NSWidth(self.bounds), @cellHeight+2), 0.5, 0.5), 
-																index:idx
+        self.drawCell RoundedRectPartType.top_part, rect:NSInsetRect(NSMakeRect(0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
       else 
-        self.drawCell RoundedRectPartType.middlePart, 
-																 rect:NSInsetRect(NSMakeRect(0, (@cellHeight+2) * idx, NSWidth(self.bounds), @cellHeight+2), 0.5, 0.5),
-																index:idx
+        self.drawCell RoundedRectPartType.middle_part, rect:NSInsetRect(NSMakeRect(0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
       end
     end
   end
@@ -243,21 +237,20 @@ class LBSegmentedButton < NSView
   #pragma mark -
   #pragma mark Mouse Interaction
   def mouseDragged theEvent
-    locationInWindow = theEvent.locationInWindow
-    location = self.convertPoint locationInWindow, fromView:self.window.contentView
-    @selectedSegment = (CGRectContainsPoint(self.bounds, NSPointToCGPoint(location))) ? @previouslySelectedSegment : -1
+    location_in_window = theEvent.locationInWindow
+    location = self.convertPoint location_in_window, fromView:self.window.contentView
+    @selected_segment = (CGRectContainsPoint(self.bounds, NSPointToCGPoint(location))) ? @prev_selected_segment : -1
   end
 		
   def mouseDown theEvent 
     super theEvent
-    locationInWindow = theEvent.locationInWindow
-    location = self.convertPoint(locationInWindow, fromView: self.window.contentView)
+    location_in_window = theEvent.locationInWindow
+    location = self.convertPoint(location_in_window, fromView: self.window.contentView)
 				
     self.numberOfCells.times do |idx|
-      if (CGRectContainsPoint(CGRectMake(0, idx * (@cellHeight+3), NSWidth(self.bounds), @cellHeight+3), NSPointToCGPoint(location)))
-        #setSelectedSegment idx
-        @selectedSegment = idx
-        @previouslySelectedSegment = idx
+      if (CGRectContainsPoint(CGRectMake(0, idx * (@cell_height+3), NSWidth(self.bounds), @cell_height+3), NSPointToCGPoint(location)))
+        @selected_segment = idx
+        @prev_selected_segment = idx
         self.setNeedsDisplay true
       end
     end
@@ -265,18 +258,16 @@ class LBSegmentedButton < NSView
 		
   def mouseUp theEvent
     super theEvent
-    locationInWindow = theEvent.locationInWindow
-    location = self.convertPoint locationInWindow, fromView:self.window.contentView
+    location_in_window = theEvent.locationInWindow
+    location = self.convertPoint location_in_window, fromView:self.window.contentView
     
     if (CGRectContainsPoint(self.bounds, NSPointToCGPoint(location)))
       sel = "buttonClicked:"
       selector = NSSelectorFromString(sel)
-      if (self.respondsToSelector selector)
-        self.performSelector selector, withObject:@selectedSegment
-      end
+      self.send(selector, @selected_segment) if (self.respond_to? selector)        
     end
-    setSelectedSegment -1
-    @previouslySelectedSegment = -1
+    self.selected_segment = -1
+    @prev_selected_segment = -1
   end
 
   def buttonClicked object
