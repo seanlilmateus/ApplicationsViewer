@@ -32,7 +32,6 @@
 		4FB1863014F0E2D000119E74 /* ANKnobAnimation.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1862D14F0E2D000119E74 /* ANKnobAnimation.rb */; };
 		4FB1863114F0E2D000119E74 /* erweiterungen.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1862E14F0E2D000119E74 /* erweiterungen.rb */; };
 		4FB1863414F0E2E600119E74 /* Item.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863314F0E2E600119E74 /* Item.rb */; };
-		4FB1863814F0E30100119E74 /* MASWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863614F0E30100119E74 /* MASWindowController.rb */; };
 		4FB1863914F0E30100119E74 /* ANSegmentedControl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */; };
 		4FB1863F14F0E31700119E74 /* MASWindow.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863B14F0E31700119E74 /* MASWindow.rb */; };
 		4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */; };
@@ -79,7 +78,6 @@
 		4FB1862D14F0E2D000119E74 /* ANKnobAnimation.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ANKnobAnimation.rb; sourceTree = "<group>"; };
 		4FB1862E14F0E2D000119E74 /* erweiterungen.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = erweiterungen.rb; sourceTree = "<group>"; };
 		4FB1863314F0E2E600119E74 /* Item.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Item.rb; sourceTree = "<group>"; };
-		4FB1863614F0E30100119E74 /* MASWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MASWindowController.rb; sourceTree = "<group>"; };
 		4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ANSegmentedControl.rb; sourceTree = "<group>"; };
 		4FB1863B14F0E31700119E74 /* MASWindow.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MASWindow.rb; sourceTree = "<group>"; };
 		4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = LBSegmentedButton.rb; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 		4FB6842D14F0ED19000990C0 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FB1863614F0E30100119E74 /* MASWindowController.rb */,
 				4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */,
 			);
 			name = controllers;
@@ -315,7 +312,6 @@
 				4FB1863014F0E2D000119E74 /* ANKnobAnimation.rb in Resources */,
 				4FB1863114F0E2D000119E74 /* erweiterungen.rb in Resources */,
 				4FB1863414F0E2E600119E74 /* Item.rb in Resources */,
-				4FB1863814F0E30100119E74 /* MASWindowController.rb in Resources */,
 				4FB1863914F0E30100119E74 /* ANSegmentedControl.rb in Resources */,
 				4FB1863F14F0E31700119E74 /* MASWindow.rb in Resources */,
 				4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */,
