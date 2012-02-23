@@ -2,8 +2,6 @@
 #  ANSegmentedControl.rb
 #  QRMacRuby
 #
-#  Created by Mateus Armando on 11.11.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
 #
 class ANSegmentedControl < NSSegmentedControl
   attr_accessor :aWindow, :currentView

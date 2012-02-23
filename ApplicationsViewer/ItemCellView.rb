@@ -1,10 +1,7 @@
 #
 #  ItemCellView.rb
 #  QRMacRuby
-#
-#  Created by Mateus Armando on 13.11.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
-#
+##
 
 class ItemCellView < NSTableCellView
   attr_accessor :detailTextField, :large_size_request, :imageView, :textField

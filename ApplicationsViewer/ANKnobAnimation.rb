@@ -1,9 +1,6 @@
 #
 #  ANKnobAnimation.rb
-#  QRMacRuby
 #
-#  Created by Mateus Armando on 11.11.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
 #
 class ANKnobAnimation < NSAnimation
   attr_accessor :start, :range, :delegate

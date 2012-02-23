@@ -2,9 +2,6 @@
 #  MASWindow.rb
 #  QRMacRuby
 #
-#  Created by Mateus Armando on 10.11.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
-#
 module MASWindowHelpers  
   INBUTTON_TOP_OFFSET = 3.0
   

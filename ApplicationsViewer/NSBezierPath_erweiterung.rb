@@ -2,8 +2,6 @@
 #  NSBezierPath_erweiterung.rb
 #  GreatUI
 #
-#  Created by Mateus Kimbango Armando on 20.05.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
 #
 class NSBezierPath
   def bezierPathWithCGPath pathRef

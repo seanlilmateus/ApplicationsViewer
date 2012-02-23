@@ -2,8 +2,6 @@
 #  erweiterungen.rb
 #  QRMacRuby
 #
-#  Created by Mateus Armando on 19.02.12.
-#  Copyright 2012 Sean Coorp. INC. All rights reserved.
 #
 
 

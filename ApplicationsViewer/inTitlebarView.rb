@@ -1,17 +1,7 @@
 #
-#  inTitlebarView.rb
-#  QRMacRuby
+#  InTitlebarView.rb
 #
-#  Created by Mateus Armando on 10.11.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
-#
-#
-#  File.rb
-#  QRMacRuby
-#
-#  Created by Mateus Armando on 10.11.11.
-#  Copyright 2011 Sean Coorp. INC. All rights reserved.
-#
+##
 
 # Corner clipping radius **/
 
