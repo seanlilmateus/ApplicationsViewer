@@ -30,7 +30,7 @@ module MateusErweiterung
   end
 
   class ::NSGraphicsContext
-    def self.transactionUsingBlock block
+    def self.transactionUsingBlock &block
       self.saveGraphicsState
       block[self.currentContext]
       self.restoreGraphicsState

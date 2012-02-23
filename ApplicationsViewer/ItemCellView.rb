@@ -21,11 +21,11 @@ class ItemCellView < NSTableCellView
     icon_size = large_size ? 32.0 : 16.0
     icon_frame = NSMakeRect(2.0, 2.0, icon_size, icon_size)
 		
-    name_left = icon_frame.origin.x + icon_frame.size.width + 5.0
+    name_left = icon_frame.origin.x + icon_frame.size.width + 10.0
     name_bottom = icon_frame.origin.y + icon_frame.size.height - (large_size ? 14.0 : 18.0)
 		
     name_width = self.bounds.size.width - name_left - 2.0
-		name_height = 16.0
+    name_height = 16.0
     name_frame = NSMakeRect(name_left, name_bottom, name_width, name_height)
     if animated
       @detailTextField.animator.alphaValue = detail_alpha

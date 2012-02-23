@@ -75,7 +75,7 @@ class AppDelegate
     end
     
     def tableClicked
-        return nil
+        nil
     end
     
     def will_enter_fullscreen(notification)
@@ -117,6 +117,4 @@ class AppDelegate
         changed_indexes = NSIndexSet.indexSetWithIndexesInRange changed_range
         @tableView.noteHeightOfRowsWithIndexesChanged changed_indexes
     end
-
 end
-
