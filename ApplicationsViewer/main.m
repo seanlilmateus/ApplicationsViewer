@@ -2,8 +2,6 @@
 //  main.m
 //  ApplicationsViewer
 //
-//  Created by Mateus Armando on 19.02.12.
-//  Copyright (c) 2012 Sean Coorp. INC. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
