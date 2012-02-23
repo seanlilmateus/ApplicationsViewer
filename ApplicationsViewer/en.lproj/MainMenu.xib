@@ -1615,7 +1615,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="45483008"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMinSize">{774, 580}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSAutorecalculatesContentBorderThicknessMinY">NO</bool>
@@ -1645,7 +1645,7 @@
 					<object class="NSSegmentedControl" id="131380316">
 						<reference key="NSNextResponder" ref="549900350"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{312, 10}, {151, 25}}</string>
+						<string key="NSFrame">{{312, 5}, {151, 25}}</string>
 						<reference key="NSSuperview" ref="549900350"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="871242739"/>
@@ -1699,7 +1699,7 @@
 					<object class="NSButton" id="871242739">
 						<reference key="NSNextResponder" ref="549900350"/>
 						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{691, 4}, {38, 38}}</string>
+						<string key="NSFrame">{{691, -1}, {38, 38}}</string>
 						<reference key="NSSuperview" ref="549900350"/>
 						<reference key="NSWindow"/>
 						<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -4269,7 +4269,6 @@
 						<string key="big_icon_view">id</string>
 						<string key="item_kind">id</string>
 						<string key="popover">id</string>
-						<string key="selected_index">id</string>
 						<string key="tableView">id</string>
 						<string key="tool_view">id</string>
 						<string key="window">id</string>
@@ -4297,10 +4296,6 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="popover">
 							<string key="name">popover</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="selected_index">
-							<string key="name">selected_index</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="tableView">
