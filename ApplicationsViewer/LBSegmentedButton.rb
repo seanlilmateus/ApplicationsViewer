@@ -31,7 +31,7 @@ class LBSegmentedButton < NSView
     end
   end
     
-  def numberOfCells
+  def number_of_cells
     @titles ? @titles.count : 0
   end
 		
@@ -46,19 +46,20 @@ class LBSegmentedButton < NSView
     self
   end
 		
-  def initWithFrame frameRect
-    super frameRect
+  def initWithFrame frame_rect
+    super
     @titles = ["CHECK","FIVE","FOUR","THREE","TWO","ONE"]
     @target = nil
     @selected_segment = -1
     @prev_selected_segment = -1
+      
     # set default drawing info
     @border_color = DEFAULT_BORDER_COLOR
     @cell_height = DEFAULT_CELL_HEIGHT
     @radius = DEFAULT_RADIUS
 		  
-    # if (NSHeight(frameRect) != self.numberOfCells * (@cell_height + 2)+1)
-    #   NSLog("The height doesn't match to the cell_height. The proper height would be #{self.numberOfCells * (@cell_height + 2)}")
+    # if (NSHeight(frameRect) != self.number_of_cells * (@cell_height + 2)+1)
+    #   NSLog("The height doesn't match to the cell_height. The proper height would be #{self.number_of_cells * (@cell_height + 2)}")
     # end
     new_frame = NSMakeRect(0,0, NSWidth(self.bounds), (@titles.size * @cell_height)+12)
     self.frame = new_frame
@@ -222,11 +223,11 @@ class LBSegmentedButton < NSView
 		
   def drawRect dirtyRect
     self.drawBackground
-    (self.numberOfCells).times do |idx|
+    (self.number_of_cells).times do |idx|
       # If it is the bottom
       if (idx == 0)
         self.drawCell RoundedRectPartType.bottom_part, rect:NSInsetRect(NSMakeRect(0, 0, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
-      elsif (idx == self.numberOfCells)
+      elsif (idx == self.number_of_cells)
         self.drawCell RoundedRectPartType.top_part, rect:NSInsetRect(NSMakeRect(0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
       else 
         self.drawCell RoundedRectPartType.middle_part, rect:NSInsetRect(NSMakeRect(0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
@@ -247,7 +248,7 @@ class LBSegmentedButton < NSView
     location_in_window = theEvent.locationInWindow
     location = self.convertPoint(location_in_window, fromView: self.window.contentView)
 				
-    self.numberOfCells.times do |idx|
+    self.number_of_cells.times do |idx|
       if (CGRectContainsPoint(CGRectMake(0, idx * (@cell_height+3), NSWidth(self.bounds), @cell_height+3), NSPointToCGPoint(location)))
         @selected_segment = idx
         @prev_selected_segment = idx
@@ -262,15 +263,14 @@ class LBSegmentedButton < NSView
     location = self.convertPoint location_in_window, fromView:self.window.contentView
     
     if (CGRectContainsPoint(self.bounds, NSPointToCGPoint(location)))
-      sel = "buttonClicked:"
-      selector = NSSelectorFromString(sel)
+      selector = "button_clicked:"
       self.send(selector, @selected_segment) if (self.respond_to? selector)        
     end
     self.selected_segment = -1
     @prev_selected_segment = -1
   end
 
-  def buttonClicked object
-    warn "buttonClicked #{object}"
+  def button_clicked object
+    warn "button nr. #{object} Clicked "
   end
 end
