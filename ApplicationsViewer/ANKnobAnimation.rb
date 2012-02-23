@@ -18,10 +18,10 @@ class ANKnobAnimation < NSAnimation
   def setCurrentProgress progress
     x = @start + progress * @range
     @delegate.send 'setPosition', x if @delegate.respond_to? 'setPosition' 
-    super(progress)
+    super
   end
 		
-  def setDelegate new_delegate
+  def delegate=(new_delegate)
     @delegate = new_delegate 
   end
 end

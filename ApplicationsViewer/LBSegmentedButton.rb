@@ -6,16 +6,17 @@
 #  Copyright 2011 Sean Coorp. INC. All rights reserved.
 #
 module RoundedRectPartType
-    def self.middle_part;0;end
-	def self.top_part; 1; end
-	def self.bottom_part;2;end
+  MIDDLE_PART = 0
+	TOP_PART    = 1
+	BOTTOM_PART = 2
 end
 
 class LBSegmentedButton < NSView
   attr_accessor :target, :prev_selected_segment
   DEFAULT_CELL_HEIGHT = 35
-  DEFAULT_BORDER_COLOR = NSColor.colorWithCalibratedRed 200.0/255.0, green:200.0/255.0, blue:200.0/255.0, alpha:1.0
   DEFAULT_RADIUS = 5
+
+  DEFAULT_BORDER_COLOR = NSColor.colorWithCalibratedRed 200.0/255.0, green:200.0/255.0, blue:200.0/255.0, alpha:1.0
 		
   SHADOWCOLOR    = NSColor.colorWithCalibratedRed 251.0/255.0,green:251.0/255.0,blue:251.0/255.0, alpha:1.0
   LIGHTTEXTCOLOR = NSColor.colorWithCalibratedRed 186.0/255.0,green:168.0/255.0,blue:168.0/255.0, alpha:1.0
@@ -50,7 +51,7 @@ class LBSegmentedButton < NSView
     super
     @titles = ["CHECK","FIVE","FOUR","THREE","TWO","ONE"]
     @target = nil
-    @selected_segment = -1
+    @selected_segment      = -1
     @prev_selected_segment = -1
       
     # set default drawing info
@@ -58,21 +59,20 @@ class LBSegmentedButton < NSView
     @cell_height = DEFAULT_CELL_HEIGHT
     @radius = DEFAULT_RADIUS
 		  
-    # if (NSHeight(frameRect) != self.number_of_cells * (@cell_height + 2)+1)
-    #   NSLog("The height doesn't match to the cell_height. The proper height would be #{self.number_of_cells * (@cell_height + 2)}")
-    # end
-    new_frame = NSMakeRect(0,0, NSWidth(self.bounds), (@titles.size * @cell_height)+12)
-    self.frame = new_frame
+    unless (NSHeight(frame_rect) == self.number_of_cells * (@cell_height + 2)+1)
+       NSLog("The height doesn't match to the cell_height. The proper height would be #{self.number_of_cells * (@cell_height + 2) + 1 }")
+    end
+    self.frame = [0, 0, NSWidth(self.bounds), (@titles.size * @cell_height)+12]
     self
   end
 		
   def awakeFromNib 
-    self.drawTitles
+    self.draw_titles
   end
 		
-  def drawTitles
+  def draw_titles
     @titles.each_with_index do |title, idx|
-      label = NSTextField.alloc.initWithFrame NSMakeRect(0, 0, NSWidth(self.bounds), 17)
+      label = NSTextField.alloc.initWithFrame NSMakeRect(0, 0, NSWidth(self.bounds), 15)
       center_distance = (@cell_height - 17)/2
       borders = (idx+1)*2
       label.bordered = false
@@ -82,20 +82,20 @@ class LBSegmentedButton < NSView
       label.alignment = NSCenterTextAlignment
       label.textColor = DARKTEXTCOLOR
 		    
-      label.setStringValue title
+      label.stringValue = title
       label.frameOrigin = NSMakePoint(0, borders + center_distance + idx * @cell_height)
       self.addSubview label
     end
   end
     
-  def drawCell type, rect:rect, index:idx
+  def draw_cell type, rect:rect, index:idx
     context = NSGraphicsContext.currentContext.graphicsPort
     
     maxX = NSMaxX(rect)
     minX = NSMinX(rect)
     minY = NSMinY(rect)
     
-    if (type == RoundedRectPartType.bottom_part)
+    if (type == RoundedRectPartType::BOTTOM_PART)
       # Bottom shadow
       bottom_shadow = CGPathCreateMutable()
       
@@ -141,14 +141,14 @@ class LBSegmentedButton < NSView
       CGPathRelease(box)
       CGPathRelease(bottom_shadow);
       
-    elsif (type == RoundedRectPartType.middle_part)
+    elsif (type == RoundedRectPartType::MIDDLE_PART)
       # Box
       box = CGPathCreateMutable()
       
       CGPathMoveToPoint(box, nil, minX, minY+ 3 + @cell_height)
-      CGPathAddLineToPoint(box, nil, minX, minY+1)
-      CGPathAddLineToPoint(box, nil, maxX, minY+1)
-      CGPathAddLineToPoint(box, nil, maxX, minY+@cell_height+3)
+      CGPathAddLineToPoint(box, nil, minX, minY + 1)
+      CGPathAddLineToPoint(box, nil, maxX, minY + 1)
+      CGPathAddLineToPoint(box, nil, maxX, minY + @cell_height+3)
       
       CGContextAddPath(context, box)
       
@@ -183,7 +183,7 @@ class LBSegmentedButton < NSView
       CGPathAddLineToPoint(box, nil, maxX, minY + @cell_height - @radius + 2)
       CGPathAddQuadCurveToPoint(box, nil, maxX, minY+@cell_height+2, maxX-@radius, minY + @cell_height+2)
 						
-      CGPathAddLineToPoint(box, nil, minX+@radius, minY+@cell_height+2)
+      CGPathAddLineToPoint(box, nil, minX + @radius, minY+@cell_height+2)
       CGPathAddQuadCurveToPoint(box, nil, minX, minY + @cell_height+2, minX, minY+@cell_height-@radius+2)
 						
       CGPathAddLineToPoint(box, nil, minX, minY+1)
@@ -215,58 +215,57 @@ class LBSegmentedButton < NSView
     end
   end
 		
-  def drawBackground
+  def draw_background
     clip_path = NSBezierPath.bezierPathWithRoundedRect self.bounds, xRadius:@radius, yRadius:@radius
     gradient = NSGradient.alloc.initWithStartingColor GRADIENTCOLOR1, endingColor:GRADIENTCOLOR2
     gradient.drawInBezierPath clip_path, angle:90.0
   end
 		
   def drawRect dirtyRect
-    self.drawBackground
-    (self.number_of_cells).times do |idx|
+    self.draw_background
+    self.number_of_cells.times do |idx|
       # If it is the bottom
-      if (idx == 0)
-        self.drawCell RoundedRectPartType.bottom_part, rect:NSInsetRect(NSMakeRect(0, 0, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
+      if idx.zero?
+        draw_cell RoundedRectPartType::BOTTOM_PART, rect:NSInsetRect([0, 0, NSWidth(self.bounds), @cell_height+2], 0.5, 0.5), index:idx
       elsif (idx == self.number_of_cells)
-        self.drawCell RoundedRectPartType.top_part, rect:NSInsetRect(NSMakeRect(0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
+        draw_cell RoundedRectPartType::TOP_PART, rect:NSInsetRect([0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2], 0.5, 0.5), index:idx
       else 
-        self.drawCell RoundedRectPartType.middle_part, rect:NSInsetRect(NSMakeRect(0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2), 0.5, 0.5), index:idx
+        draw_cell RoundedRectPartType::MIDDLE_PART, rect:NSInsetRect([0, (@cell_height+2) * idx, NSWidth(self.bounds), @cell_height+2], 0.5, 0.5), index:idx
       end
     end
   end
 		
   #pragma mark -
   #pragma mark Mouse Interaction
-  def mouseDragged theEvent
-    location_in_window = theEvent.locationInWindow
+  def mouseDragged the_event
+    location_in_window = the_event.locationInWindow
     location = self.convertPoint location_in_window, fromView:self.window.contentView
     @selected_segment = (CGRectContainsPoint(self.bounds, NSPointToCGPoint(location))) ? @prev_selected_segment : -1
   end
 		
-  def mouseDown theEvent 
-    super theEvent
-    location_in_window = theEvent.locationInWindow
+  def mouseDown the_event 
+    super
+    location_in_window = the_event.locationInWindow
     location = self.convertPoint(location_in_window, fromView: self.window.contentView)
-				
     self.number_of_cells.times do |idx|
-      if (CGRectContainsPoint(CGRectMake(0, idx * (@cell_height+3), NSWidth(self.bounds), @cell_height+3), NSPointToCGPoint(location)))
+      if (CGRectContainsPoint(CGRectMake(0, idx * (@cell_height + 3), NSWidth(self.bounds), @cell_height), NSPointToCGPoint(location)))
         @selected_segment = idx
         @prev_selected_segment = idx
-        self.setNeedsDisplay true
+        self.needsDisplay = true
       end
     end
   end
 		
-  def mouseUp theEvent
-    super theEvent
-    location_in_window = theEvent.locationInWindow
+  def mouseUp the_event
+    super
+    location_in_window = the_event.locationInWindow
     location = self.convertPoint location_in_window, fromView:self.window.contentView
     
     if (CGRectContainsPoint(self.bounds, NSPointToCGPoint(location)))
       selector = "button_clicked:"
       self.send(selector, @selected_segment) if (self.respond_to? selector)        
     end
-    self.selected_segment = -1
+    self.selected_segment  = -1
     @prev_selected_segment = -1
   end
 

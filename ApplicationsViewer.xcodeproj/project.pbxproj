@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F305BB014F6C28D00BB1C86 /* InTitlebarView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4F305BAF14F6C28D00BB1C86 /* InTitlebarView.rb */; };
 		4FB185F014F0E1B100119E74 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB185EF14F0E1B100119E74 /* Cocoa.framework */; };
 		4FB185F214F0E1B100119E74 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB185F114F0E1B100119E74 /* MacRuby.framework */; };
 		4FB185FB14F0E1B100119E74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB185F914F0E1B100119E74 /* InfoPlist.strings */; };
@@ -32,7 +33,6 @@
 		4FB1863814F0E30100119E74 /* MASWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863614F0E30100119E74 /* MASWindowController.rb */; };
 		4FB1863914F0E30100119E74 /* ANSegmentedControl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */; };
 		4FB1863F14F0E31700119E74 /* MASWindow.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863B14F0E31700119E74 /* MASWindow.rb */; };
-		4FB1864014F0E31700119E74 /* inTitlebarView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863C14F0E31700119E74 /* inTitlebarView.rb */; };
 		4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */; };
 		4FB1864214F0E31700119E74 /* ItemCellView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1863E14F0E31700119E74 /* ItemCellView.rb */; };
 /* End PBXBuildFile section */
@@ -49,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		4F15608614F2DE830086F300 /* ApplicationsViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ApplicationsViewer.entitlements; sourceTree = "<group>"; };
+		4F305BAF14F6C28D00BB1C86 /* InTitlebarView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = InTitlebarView.rb; sourceTree = "<group>"; };
 		4FB185EB14F0E1B100119E74 /* ApplicationsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB185EF14F0E1B100119E74 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4FB185F114F0E1B100119E74 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
@@ -77,7 +78,6 @@
 		4FB1863614F0E30100119E74 /* MASWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MASWindowController.rb; sourceTree = "<group>"; };
 		4FB1863714F0E30100119E74 /* ANSegmentedControl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ANSegmentedControl.rb; sourceTree = "<group>"; };
 		4FB1863B14F0E31700119E74 /* MASWindow.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MASWindow.rb; sourceTree = "<group>"; };
-		4FB1863C14F0E31700119E74 /* inTitlebarView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = inTitlebarView.rb; sourceTree = "<group>"; };
 		4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = LBSegmentedButton.rb; sourceTree = "<group>"; };
 		4FB1863E14F0E31700119E74 /* ItemCellView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ItemCellView.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,9 +204,9 @@
 		4FB6842C14F0ED01000990C0 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				4F305BAF14F6C28D00BB1C86 /* InTitlebarView.rb */,
 				4FB1863D14F0E31700119E74 /* LBSegmentedButton.rb */,
 				4FB1863B14F0E31700119E74 /* MASWindow.rb */,
-				4FB1863C14F0E31700119E74 /* inTitlebarView.rb */,
 				4FB1863E14F0E31700119E74 /* ItemCellView.rb */,
 			);
 			name = views;
@@ -312,9 +312,9 @@
 				4FB1863814F0E30100119E74 /* MASWindowController.rb in Resources */,
 				4FB1863914F0E30100119E74 /* ANSegmentedControl.rb in Resources */,
 				4FB1863F14F0E31700119E74 /* MASWindow.rb in Resources */,
-				4FB1864014F0E31700119E74 /* inTitlebarView.rb in Resources */,
 				4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */,
 				4FB1864214F0E31700119E74 /* ItemCellView.rb in Resources */,
+				4F305BB014F6C28D00BB1C86 /* InTitlebarView.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +420,6 @@
 				GCC_PREFIX_HEADER = "ApplicationsViewer/ApplicationsViewer-Prefix.pch";
 				INFOPLIST_FILE = "ApplicationsViewer/ApplicationsViewer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -439,7 +438,6 @@
 				GCC_PREFIX_HEADER = "ApplicationsViewer/ApplicationsViewer-Prefix.pch";
 				INFOPLIST_FILE = "ApplicationsViewer/ApplicationsViewer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -14,10 +14,10 @@
 #
 
 # Corner clipping radius **/
-CORNER_CLIP_RADIUS = 4.0
 
 class INTitlebarView < NSView
     
+    CORNER_CLIP_RADIUS = 4.0
     COLOR_MAIN_START = NSColor.colorWithDeviceWhite 0.66, alpha:1.0
     COLOR_MAIN_END = NSColor.colorWithDeviceWhite 0.9, alpha:1.0
     COLOR_MAIN_BOTTOM = NSColor.colorWithDeviceWhite 0.408, alpha:1.0
