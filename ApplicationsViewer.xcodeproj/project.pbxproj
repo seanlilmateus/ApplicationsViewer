@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F305BB014F6C28D00BB1C86 /* InTitlebarView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4F305BAF14F6C28D00BB1C86 /* InTitlebarView.rb */; };
+		4F305BB214F6C39900BB1C86 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4F305BB114F6C39900BB1C86 /* README.md */; };
 		4FB185F014F0E1B100119E74 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB185EF14F0E1B100119E74 /* Cocoa.framework */; };
 		4FB185F214F0E1B100119E74 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB185F114F0E1B100119E74 /* MacRuby.framework */; };
 		4FB185FB14F0E1B100119E74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB185F914F0E1B100119E74 /* InfoPlist.strings */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		4F15608614F2DE830086F300 /* ApplicationsViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ApplicationsViewer.entitlements; sourceTree = "<group>"; };
 		4F305BAF14F6C28D00BB1C86 /* InTitlebarView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = InTitlebarView.rb; sourceTree = "<group>"; };
+		4F305BB114F6C39900BB1C86 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4FB185EB14F0E1B100119E74 /* ApplicationsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB185EF14F0E1B100119E74 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4FB185F114F0E1B100119E74 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
@@ -98,6 +100,7 @@
 		4FB185E014F0E1B000119E74 = {
 			isa = PBXGroup;
 			children = (
+				4F305BB114F6C39900BB1C86 /* README.md */,
 				4FB185F614F0E1B100119E74 /* ApplicationsViewer */,
 				4FB185EE14F0E1B100119E74 /* Frameworks */,
 				4FB185EC14F0E1B100119E74 /* Products */,
@@ -315,6 +318,7 @@
 				4FB1864114F0E31700119E74 /* LBSegmentedButton.rb in Resources */,
 				4FB1864214F0E31700119E74 /* ItemCellView.rb in Resources */,
 				4F305BB014F6C28D00BB1C86 /* InTitlebarView.rb in Resources */,
+				4F305BB214F6C39900BB1C86 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
