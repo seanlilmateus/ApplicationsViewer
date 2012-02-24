@@ -24,13 +24,11 @@ class Item
   end
     
   def version
-    version = ""
     if is_app? 
-        app_bundle = NSBundle.bundleWithPath(@item_path)
-    	app_info = app_bundle.infoDictionary
-    	version = "Version %s" % app_info['CFBundleShortVersionString'] #CFBundleGetInfoString 
+      app_bundle = NSBundle.bundleWithPath(@item_path)
+    	"Version %{CFBundleShortVersionString}" % app_bundle.infoDictionary
+  	else ""
     end
-    version
   end
 	
   protected
