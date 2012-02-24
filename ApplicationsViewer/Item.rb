@@ -6,26 +6,27 @@
 #  Copyright 2011 Sean Coorp. INC. All rights reserved.
 #
 class Item
-  attr_accessor :itemPath, :itemDisplayName, :itemKind, :itemIcon
-  def initialize pathName
-    @itemPath = "/Applications".stringByAppendingPathComponent pathName
+
+  def initialize path_name
+    @item_path = "/Applications".stringByAppendingPathComponent path_name
   end
-  def itemDisplayName
-    @itemDisplayName ||= NSFileManager.defaultManager.displayNameAtPath @itemPath
-  end
-  
-  def itemKind
-    @itemKind ||= @itemPath.hasSuffix("app") ? "Application" : "Folder"
+    
+  def item_display_name
+    @item_display_name ||= NSFileManager.defaultManager.displayNameAtPath @item_path
   end
   
-  def itemIcon
-    @itemIcon ||= NSWorkspace.sharedWorkspace.iconForFile @itemPath
+  def item_kind
+    @item_kind ||= @item_path.hasSuffix("app") ? "Application" : "Folder"
+  end
+  
+  def item_icon
+    @item_icon ||= NSWorkspace.sharedWorkspace.iconForFile @item_path
   end
     
   def version
     version = ""
     if is_app? 
-        app_bundle = NSBundle.bundleWithPath(@itemPath)
+        app_bundle = NSBundle.bundleWithPath(@item_path)
     	app_info = app_bundle.infoDictionary
     	version = "Version %s" % app_info['CFBundleShortVersionString'] #CFBundleGetInfoString 
     end
@@ -34,7 +35,7 @@ class Item
 	
   protected
   def is_app?
-    self.itemKind == "Application"
+    self.item_kind == "Application"
   end
 end
 

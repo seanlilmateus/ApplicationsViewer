@@ -13,6 +13,7 @@ class AppDelegate
   attr_accessor :applications, :big_icon_view, :app_name
   attr_accessor :app_version, :item_kind
   attr_reader :selected_index
+    
   def applicationDidFinishLaunching(a_notification)
     # Insert code here to initialize your application
     @dock = NSApplication.sharedApplication.dockTile
@@ -82,9 +83,9 @@ class AppDelegate
     
   def setSelected_index(index)
     selected_app = self.items[index.first]
-    @big_icon_view.image = selected_app.itemIcon
-    @app_name.stringValue = selected_app.itemDisplayName
-    @item_kind.stringValue = selected_app.itemKind
+    @big_icon_view.image = selected_app.item_icon
+    @app_name.stringValue = selected_app.item_display_name
+    @item_kind.stringValue = selected_app.item_kind
     @app_version.stringValue = selected_app.version
     @selected_index = index
   end

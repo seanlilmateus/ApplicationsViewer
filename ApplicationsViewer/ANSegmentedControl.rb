@@ -200,6 +200,7 @@ class ANSegmentedControl < NSSegmentedControl
                                 respectFlipped: true,
                                          hints: nil
   end
+    
   def animateTo x
     maxX = self.frame.size.width - (self.frame.size.width / self.segmentCount)
     anim = ANKnobAnimation.alloc.initWithStart @location.x, to:x
